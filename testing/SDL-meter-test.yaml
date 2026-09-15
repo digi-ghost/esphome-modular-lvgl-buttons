@@ -45,7 +45,7 @@ logger:
 image:
   rgb565:
     alpha_channel:
-      - file: esphome-modular-lvgl-buttons/tides/assets/images/tide_pointer.svg
+      - file: esphome-modular-lvgl-buttons/ui/tides/assets/images/tide_pointer.svg
         id: tide_pointer
         resize: 200x88  # 2.272  - 22x22
 font:
@@ -57,8 +57,6 @@ font:
     id: nunito_24
     size: 24
     bpp: 8
-
-
 
 
 # -------------------------------------------------------------------------
@@ -119,7 +117,7 @@ lvgl:
                           label_gap: 25
                           stride: 1
                           width: 2
-                          length: 20    
+                          length: 20
 
             - obj:
                 align: TOP_MID
@@ -167,5 +165,3 @@ lvgl:
                       text_align: center
                       width: 100%
                       text: "Low Tide"
-
-                   
