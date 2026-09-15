@@ -73,3 +73,71 @@ script:
   - lvgl.label.update:
       id: value_${uid}
       text: !lambda return id(${uid}_current_value);
+  - if:
+      condition:
+        lambda: return id(${uid}_current_value) == "disarmed";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: $button_off_color
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_off_outline
+          text_color: $icon_off_color
+  - if:
+      condition:
+        lambda: return id(${uid}_current_value) == "armed_home";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: ep_blue
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_home_outline
+          text_color: $icon_on_color
+  - if:
+      condition:
+        lambda: return id(${uid}_current_value) == "armed_away";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: ep_blue
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_lock_outline
+          text_color: $icon_on_color
+  - if:
+      condition:
+        lambda: return id(${uid}_current_value) == "armed_night";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: ep_blue
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_moon_outline
+          text_color: $icon_on_color
+  - if:
+      condition:
+        lambda: |-
+          return id(${uid}_current_value) == "arming" ||
+                 id(${uid}_current_value) == "pending";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: ep_orange
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_sync_outline
+          text_color: yellow
+  - if:
+      condition:
+        lambda: return id(${uid}_current_value) == "triggered";
+      then:
+      - lvgl.widget.update:
+          id: button_${uid}
+          bg_color: red
+      - lvgl.widget.update:
+          id: icon_${uid}
+          text: $mdi_shield_alert_outline
+          text_color: white
