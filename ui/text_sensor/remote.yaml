@@ -80,9 +80,11 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: $button_off_color
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_off_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: $icon_off_color
   - if:
       condition:
@@ -91,9 +93,11 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: ep_blue
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_home_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: $icon_on_color
   - if:
       condition:
@@ -102,9 +106,11 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: ep_blue
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_lock_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: $icon_on_color
   - if:
       condition:
@@ -113,9 +119,11 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: ep_blue
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_moon_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: $icon_on_color
   - if:
       condition:
@@ -126,9 +134,11 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: ep_orange
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_sync_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: yellow
   - if:
       condition:
@@ -137,7 +147,9 @@ script:
       - lvgl.widget.update:
           id: button_${uid}
           bg_color: red
-      - lvgl.widget.update:
+      - lvgl.label.update:
           id: icon_${uid}
           text: $mdi_shield_alert_outline
+      - lvgl.widget.update:
+          id: icon_${uid}
           text_color: white
