@@ -45,7 +45,7 @@ lvgl:
                   on_short_click:
                     - homeassistant.action:
                         action: ${ha_service | default("select.select_option")}
-                        data: ${ha_service_data | default({"entity_id": entity_id, "option": select_option})}
+                        data: "${ha_service_data | default({'entity_id': entity_id, 'option': select_option})}"
 
 # This section will update input select state from Home Assistant
 text_sensor:
