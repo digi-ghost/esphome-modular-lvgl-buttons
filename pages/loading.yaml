@@ -152,15 +152,18 @@ api:
   # encryption:
     # key: !secret api_encryption_key
   on_client_connected:
-    - if:
-        condition:
-          lambda: 'return (0 == client_info.find("Home Assistant "));'
-        then:
-          - script.execute: update_loading_page
-          # - lvgl.label.update:
-          # id: ha_status
-          # text_color: blue
-          - script.execute: on_ha_connected
+  #  - if:
+  #      condition:
+  #        lambda: 'return (0 == client_info.find("Home Assistant "));'
+  #      then:
+  #        - script.execute: update_loading_page
+  #        # - lvgl.label.update:
+  #        # id: ha_status
+  #        # text_color: blue
+  #        - script.execute: on_ha_connected
+  on_client_connected:
+    - script.execute: update_loading_page
+    - script.execute: on_ha_connected
 
   on_client_disconnected:
     - if:
