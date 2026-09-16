@@ -151,7 +151,7 @@ script:
 api:
   # encryption:
     # key: !secret api_encryption_key
-  on_client_connected:
+  #on_client_connected:
   #  - if:
   #      condition:
   #        lambda: 'return (0 == client_info.find("Home Assistant "));'
